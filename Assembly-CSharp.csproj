@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\ScrollBackground.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/cs16048/Documents/Unity/SushiFlyer/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
