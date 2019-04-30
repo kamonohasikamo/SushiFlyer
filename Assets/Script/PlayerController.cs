@@ -8,6 +8,16 @@ public class PlayerController : MonoBehaviour {
 	public float maxHeightViewArea;
 	public float playerUpVector;
 
+	private bool isGameOver;
+
+	public bool getIsGameOver() {
+		return isGameOver;
+	}
+
+	public void setIsGameOver(bool setFlagIsGameOver) {
+		isGameOver = setFlagIsGameOver;
+	}
+
 	void Awake() {
 		rigidBody = GetComponent<Rigidbody2D>();
 	}
@@ -19,7 +29,19 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void upVector() {
+		// ゲームオーバー判定
+		if (getIsGameOver()) {
+			return;
+		}
 		rigidBody.velocity = new Vector2(0.0f, playerUpVector);
+	}
+
+	void OnCollisionEnter2D(Collision2D collision2d) {
+		if (isGameOver) {
+			return;
+		}
+		// ぶつかった判定
+		setIsGameOver(true);
 	}
 
 }
