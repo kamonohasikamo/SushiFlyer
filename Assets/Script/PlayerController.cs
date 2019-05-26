@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//=====================================================
+// お寿司を管理するクラス
+//=====================================================
 public class PlayerController : MonoBehaviour {
 	Rigidbody2D rigidBody;
-
 	public float maxHeightViewArea;
 	public float playerUpVector;
-
 	private bool isGameOver;
 
 	public bool getIsGameOver() {
