@@ -60,8 +60,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530180feea43ef847bb2def0c59b0f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBlockHeight: 2.4
-  maxBlockHeight: 0
+  minBlockHeight: -2
+  maxBlockHeight: 2.4
   showBlocks: {fileID: 6729289658824414083}
 --- !u!1 &6729289658824414083
 GameObject:
@@ -121,7 +121,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6729289659248648213}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.7, z: 0}
+  m_LocalPosition: {x: 0, y: 5.8, z: 0}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 6729289658824414080}
