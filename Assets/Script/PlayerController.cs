@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour {
 		if (getIsGameOver()) {
 			return;
 		}
+		// 重力ないときは動作しない
+		if (rigidBody.isKinematic) {
+			return;
+		}
 		rigidBody.velocity = new Vector2(0.0f, playerUpVector);
 	}
 
@@ -43,5 +47,8 @@ public class PlayerController : MonoBehaviour {
 		// ぶつかった判定
 		setIsGameOver(true);
 	}
-
+	public void setGravity(bool isGravity) {
+		// 入力とは逆の判定を入れる
+		rigidBody.isKinematic = !isGravity;
+	}
 }
