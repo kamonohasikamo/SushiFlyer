@@ -18,14 +18,38 @@ public class GameController : MonoBehaviour {
 	public PlayerController player;
 	public GameObject blocks;
 
+	public static int gameScore;
+
+	public static bool isGameStart;
+
+	public float totalTime;
+
 	void Start() {
+		isGameStart = false;
 		Ready();
+	}
+
+	void Update() {
+		switch (gameState) {
+			case gameStateInfo.isReady:
+				gameScore = 0;
+				break;
+			case gameStateInfo.isPlay:
+				totalTime += Time.deltaTime;
+				gameScore = (int)totalTime;
+				break;
+			case gameStateInfo.isGameOver:
+				
+				break;
+		}
+
 	}
 
 	void LateUpdate() {
 		switch(gameState) {
 			case gameStateInfo.isReady:
 				if (Input.GetButtonDown("Fire1")) {
+					isGameStart = true;
 					gameStart();
 				}
 				break;
@@ -48,6 +72,7 @@ public class GameController : MonoBehaviour {
 		// 全てのオブジェクトを無効化
 		player.setGravity(false);
 		blocks.SetActive(false);
+		gameScore = 0;
 	}
 
 	void gameStart() {
@@ -74,6 +99,16 @@ public class GameController : MonoBehaviour {
 
 	void Reload() {
 		// 現在のシーンを再読み込み
+		isGameStart = false;
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 	}
+
+	public static bool getIsGameStart() {
+		return isGameStart;
+	}
+
+	public static int getGameScore() {
+		return gameScore;
+	}
+
 }
