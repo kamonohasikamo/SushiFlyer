@@ -55,6 +55,8 @@
   <ItemGroup>
      <Compile Include="Assets\Script\BlockHeightController.cs" />
      <Compile Include="Assets\Script\GameController.cs" />
+     <Compile Include="Assets\Script\GameTitle\GameExitButton.cs" />
+     <Compile Include="Assets\Script\GameTitle\GameStartButton.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\ScoreTextController.cs" />
      <Compile Include="Assets\Script\ScrollBackground.cs" />
