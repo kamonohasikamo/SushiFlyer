@@ -8,11 +8,11 @@ public class ScoreTextController : MonoBehaviour {
 
 	void Start() {
 		scoreText = this.gameObject.GetComponent<Text>();
-		scoreText.text = "Score:" + GameController.getGameScore().ToString("D4");
+		scoreText.text = "Score:" + GameController.getGameScore().ToString("D5");
 	}
 
 	void Update() {
-		scoreText.text = "Score:" + GameController.getGameScore().ToString("D4");
+		scoreText.text = "Score:" + GameController.getGameScore().ToString("D5");
 	}
 
 }

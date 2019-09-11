@@ -59,9 +59,9 @@ public class GameController : MonoBehaviour {
 				}
 				break;
 			case gameStateInfo.isGameOver:
-				if (Input.GetButtonDown("Fire1")) {
-					Reload();
-				}
+				// if (Input.GetButtonDown("Fire1")) {
+				// 	Reload();
+				// }
 				break;
 		}
 	}
@@ -95,6 +95,12 @@ public class GameController : MonoBehaviour {
 		foreach (ScrollBackground so in scrollObjects) {
 			so.enabled = false;
 		}
+		StartCoroutine("toResultSceneCoroutine");
+	}
+
+	private IEnumerator toResultSceneCoroutine() {
+		yield return new WaitForSeconds (1.0f);
+		SceneManager.LoadScene("GameResult");
 	}
 
 	void Reload() {
@@ -109,6 +115,10 @@ public class GameController : MonoBehaviour {
 
 	public static int getGameScore() {
 		return gameScore;
+	}
+
+	public static void setGameScore(int score) {
+		gameScore = score;
 	}
 
 }
